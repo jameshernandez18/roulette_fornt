@@ -1,0 +1,47 @@
+.col{
+    overflow: hidden;
+    width: 150px;
+    text-overflow: ellipsis;
+    white-space: normal;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .mat-card-title {
+    height: 1em;
+  }
+
+  .contend {
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .mat-card-inner {
+    display: inline-block;
+    max-width: 200px;
+    min-width: 100px;
+  }
+
+  .table-content {
+    padding: 10px;
+  }
+
+  table {
+    width: 100%;
+    margin: 1rem auto;
+  }
+
+  .mat-tab-body-wrapper {
+    min-width: 0;
+    display: block;
+    flex-grow: 1;
+  }
+
+  .general-contend {
+    padding-bottom: 50px;
+  }
+
+  .cronos-space {
+    flex: 1 0 50%;
+  }

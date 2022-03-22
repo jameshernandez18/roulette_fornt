@@ -1,0 +1,133 @@
+
+<mat-toolbar id="bannerRoulette">
+  <mat-icon>
+    assessment
+  </mat-icon>
+  Listado de ruletas
+
+</mat-toolbar>
+
+
+<div class="table-content">
+
+  <button mat-icon-button color="primary" (click)="createRoulette()" id="manualTrayInboxBtn" permissions>
+    Crear Nueva Ruleta
+    <mat-icon>
+      send
+    </mat-icon>
+  </button>
+
+  <div class="mat-elevation-z8">
+
+
+    <table  mat-table [dataSource]="dataRoulette" matSort matSortActive="created" matSortDisableClear
+      matSortDirection="desc">
+
+      <ng-container matColumnDef="idRoulete" class="col">
+        <th id="idviabilizador" mat-header-cell *matHeaderCellDef mat-sort-header class="col">Id Ruleta</th>
+        <td mat-cell *matCellDef="let datRoulette">
+          <button mat-button >
+            {{datRoulette.id}}
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="estado" class="col">
+        <th id="customer" mat-header-cell *matHeaderCellDef mat-sort-header class="col">Estado</th>
+        <td mat-cell *matCellDef="let datRoulette">{{datRoulette.idroulettestatus.description}}</td>
+      </ng-container>
+
+
+
+
+      <ng-container matColumnDef="enable">
+        <th id="disable" mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let datRoulette">
+          <button mat-icon-button color="accent" (click)="enableRoulet(datRoulette)">
+            Habilitar
+          </button>
+        </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="disable">
+        <th id="escalar" mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let datRoulette">
+          <button mat-icon-button color="accent" (click)="disableRoulet(datRoulette)">
+            Cerrar
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="view">
+        <th id="enable" mat-header-cell *matHeaderCellDef> Detalle </th>
+        <td mat-cell *matCellDef="let datRoulette">
+          <button mat-icon-button color="accent" (click)="callViewRoulette(datRoulette, 'roulette/create')">
+            <mat-icon>
+              send
+            </mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+
+
+    <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+
+  <mat-toolbar id="bannerUser">
+    <mat-icon>
+      assessment
+    </mat-icon>
+    Listado de Usuarios
+
+  </mat-toolbar>
+
+
+  <div class="mat-elevation-z8">
+
+
+    <table  mat-table [dataSource]="dataUsers" matSort matSortActive="viewUser" matSortDisableClear
+            matSortDirection="desc">
+
+      <ng-container matColumnDef="idUser" class="col">
+        <th id="idUser" mat-header-cell *matHeaderCellDef mat-sort-header class="col">Id</th>
+        <td mat-cell *matCellDef="let dataUsers">
+          <button mat-button >
+            {{dataUsers.id}}
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name" class="col">
+        <th id="name" mat-header-cell *matHeaderCellDef mat-sort-header class="col">Usuario</th>
+        <td mat-cell *matCellDef="let dataUsers">{{dataUsers.username}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="credit" class="col">
+        <th id="credit" mat-header-cell *matHeaderCellDef mat-sort-header class="col">Credito</th>
+        <td mat-cell *matCellDef="let dataUsers">{{dataUsers.credit}}</td>
+      </ng-container>
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumn"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumn;"></tr>
+    </table>
+
+
+
+
+    <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>
+<div>
+
+</div>
